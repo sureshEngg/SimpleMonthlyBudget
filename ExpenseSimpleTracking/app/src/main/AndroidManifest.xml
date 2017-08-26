@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="suresh.expensesimpletracking">
+    <!--Allows internet access to the application-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/play_icon_512"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="suresh.expensesimpletracking.HomePage"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="MainActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="AddActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="ViewActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="RequiredActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="TripActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="AddMemberActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="AddExpenseActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="ViewExpenseActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="ViewExpenseIndividualActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="ViewIndividualDetails"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="MonthlyViewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="ViewMonthExpenseActivity"
+            android:screenOrientation="portrait"></activity>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <EditText
+                android:id="@+id/addexpensestext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Enter Expense title"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/addprice"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addexpensestext"
+                android:layout_margin="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:hint="Enter Price" />
+
+            <Button
+                android:id="@+id/add"
+                style="@style/AppTheme.Button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addprice"
+                android:layout_margin="10dp"
+                android:text="Add" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

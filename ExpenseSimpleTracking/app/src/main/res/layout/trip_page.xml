@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/ad_expense"
+            style="@style/material_design_btn"
+            android:layout_gravity="center_horizontal"
+            android:text="Add Expense" />
+
+        <Button
+            android:id="@+id/view_expense"
+            style="@style/material_design_btn"
+            android:layout_gravity="center_horizontal"
+            android:text="View Expense" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ad_member"
+                style="@style/material_design_btn"
+                android:layout_width="0dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:background="@color/light_green"
+                android:text="Add Member" />
+
+            <Button
+                android:id="@+id/remove_trip_data"
+                style="@style/material_design_btn"
+                android:layout_width="0dip"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:background="@color/light_red"
+                android:text="Remove Trip" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
