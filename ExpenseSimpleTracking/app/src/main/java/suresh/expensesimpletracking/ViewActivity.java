@@ -77,6 +77,7 @@ public class ViewActivity extends Activity {
             }
         });
         setFontStyles();
+        adMOb();
     }
 
     @Override
@@ -117,7 +118,7 @@ public class ViewActivity extends Activity {
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 // Code to be executed when an ad request fails.
-                openMonthlyActivity();
+                //openMonthlyActivity();
             }
 
             @Override
@@ -133,6 +134,7 @@ public class ViewActivity extends Activity {
             mInterstitialAd.show();
         } else {
             Log.d("TAG", "The interstitial wasn't loaded yet.");
+            openMonthlyActivity();
         }
     }
 
