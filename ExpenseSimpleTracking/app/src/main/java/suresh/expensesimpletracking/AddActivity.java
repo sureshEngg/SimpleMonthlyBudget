@@ -27,7 +27,7 @@ public class AddActivity extends Activity implements OnClickListener {
     Button addButton;
     SQLiteDBUtil sqLiteDBUtil;
     private InterstitialAd mInterstitialAd;
-    int expenseCount = 1;
+    boolean expenseCount = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +78,6 @@ public class AddActivity extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.add:
                 sqLiteDBUtil.OpenDB();
-                expenseCount++;
                 if (AllDataOK()) {
 
                     ArrayList<Object> data = new ArrayList<Object>();
@@ -97,8 +96,14 @@ public class AddActivity extends Activity implements OnClickListener {
                 }
 
                 sqLiteDBUtil.CloseDB();
-                if(expenseCount>3)
+
+                if (expenseCount) {
                     invokeAd();
+                    expenseCount = false;
+                }else{
+                    expenseCount = true;
+                }
+
                 break;
 
             default:
@@ -124,7 +129,7 @@ public class AddActivity extends Activity implements OnClickListener {
             try {
                 date = alternateFormat.parse(currentDate);
                 str = outputFormat.format(date);
-            }catch (Exception e2){
+            } catch (Exception e2) {
 
 
             }
@@ -139,6 +144,12 @@ public class AddActivity extends Activity implements OnClickListener {
             Toast.makeText(this, "Please add a Title!", Toast.LENGTH_LONG).show();
             return false;
         }
+
+        if (addPrice.getText().toString().trim().length() == 0) {
+            Toast.makeText(this, "Please add a Price!", Toast.LENGTH_LONG).show();
+            return false;
+        }
+
         return true;
     }
 

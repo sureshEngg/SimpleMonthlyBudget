@@ -1,13 +1,5 @@
 
 App ID: ca-app-pub-9989774996291836~3157286973
 
-
-Interestrial ADMOB:
     App ID: ca-app-pub-9989774996291836~3157286973
     Ad unit ID: ca-app-pub-9989774996291836/9171374444
-
-Banner ADMOB:
-
-    App ID: ca-app-pub-9989774996291836~3157286973
-    Ad unit ID: ca-app-pub-9989774996291836/8803175956
-

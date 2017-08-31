@@ -53,6 +53,7 @@ public class MainActivity extends Activity implements OnClickListener{
 	private void adMOb() {
 		mInterstitialAd = new InterstitialAd(this);
 		mInterstitialAd.setAdUnitId(getResources().getString(R.string.ad_unit_id));
+		mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         mInterstitialAd.setAdListener(new AdListener() {
             @Override

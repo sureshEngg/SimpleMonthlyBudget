@@ -29,7 +29,7 @@ public class AddExpenseActivity extends Activity implements OnClickListener{
 	Button addButton;
 	SQLiteDBUtil sqLiteDBUtil;
 	private InterstitialAd mInterstitialAd;
-	int expenseCount = 1;
+	boolean expenseCount = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +118,6 @@ public class AddExpenseActivity extends Activity implements OnClickListener{
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.add:
-			expenseCount++;
 			sqLiteDBUtil.OpenDB();
 			
 			if(AllDataOK())
@@ -142,8 +141,12 @@ public class AddExpenseActivity extends Activity implements OnClickListener{
 			}
 			
 			sqLiteDBUtil.CloseDB();
-			if(expenseCount>3)
+			if(expenseCount) {
 				invokeAd();
+				expenseCount = false;
+			}else{
+				expenseCount = true;
+			}
 
 			break;
 

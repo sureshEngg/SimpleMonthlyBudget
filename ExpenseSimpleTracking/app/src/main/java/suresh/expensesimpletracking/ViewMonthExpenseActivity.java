@@ -53,8 +53,15 @@ public class ViewMonthExpenseActivity extends Activity {
 
             Expense expense = new Expense();
             expense.setTitle(arrData[1]);
-            expense.setPrice(Integer.parseInt(arrData[2]));
-            totalAmt = totalAmt + Integer.parseInt(arrData[2]);
+            if(arrData[2]!=null && arrData[2].length()>0) {
+                expense.setPrice(Integer.parseInt(arrData[2]));
+                totalAmt = totalAmt + Integer.parseInt(arrData[2]);
+            }
+            else{
+                expense.setPrice(0);
+                totalAmt = totalAmt + 0;
+            }
+
             expense.setDated(arrData[3]);
             dataAdaptor.add(expense);
         }

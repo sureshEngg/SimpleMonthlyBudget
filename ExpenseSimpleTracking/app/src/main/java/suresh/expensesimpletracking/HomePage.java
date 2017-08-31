@@ -17,6 +17,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -51,6 +54,7 @@ public class HomePage extends Activity implements OnClickListener {
         PreferenceManager.setDefaultValues(this, R.xml.mypreference, false);
         checkForAPKUpdates();
     }
+
 
     @Override
     protected void onResume() {
