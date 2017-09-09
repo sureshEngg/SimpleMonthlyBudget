@@ -147,7 +147,7 @@ public class HomePage extends Activity implements OnClickListener {
                 progressDialog.dismiss();
             if (jsonObject) {
                 String currentVersion = getCurrentVersion();
-                Toast.makeText(HomePage.this, currentVersion + ", " + latestVersion, Toast.LENGTH_LONG).show();
+                //Toast.makeText(HomePage.this, currentVersion + ", " + latestVersion, Toast.LENGTH_LONG).show();
                 if (latestVersion != null && currentVersion != null) {
                     if (!currentVersion.equalsIgnoreCase(latestVersion)) {
                         SDKSettings.setSharedPreferenceString(HomePage.this, AppConstants.KEY_PREF_VERSION, latestVersion);
