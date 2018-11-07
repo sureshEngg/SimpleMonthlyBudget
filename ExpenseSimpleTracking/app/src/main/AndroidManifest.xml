@@ -12,6 +12,9 @@
         android:icon="@drawable/play_icon_512"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/unit_id"/>
 
         <activity
             android:name="suresh.expensesimpletracking.HomePage"

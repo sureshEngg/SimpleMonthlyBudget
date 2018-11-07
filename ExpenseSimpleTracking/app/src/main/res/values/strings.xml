@@ -8,12 +8,14 @@
     <string name="Trip_Expense">Trip Expense</string>
     <string name="title_monthly">Monthly</string>
     <string name="no_items">No items found!</string>
-    <string name="ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
-    <!--AdMob Production-> ca-app-pub-9989774996291836/9171374444-->
+    <string name="unit_id">ca-app-pub-9299027941745008~2377203058</string>
+    <string name="ad_unit_id">ca-app-pub-9299027941745008/5737863566</string>
+    <!--AdMob Production-> ca-app-pub-9299027941745008/5737863566-->
     <!--AdMob Testing-> ca-app-pub-3940256099942544/1033173712-->
 
 
 
     <!--Unit ID another-->
     <!--ca-app-pub-8174138486024352/9061844601-->
+    <!--ca-app-pub-9989774996291836/9171374444-->
 </resources>

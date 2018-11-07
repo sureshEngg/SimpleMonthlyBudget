@@ -12,15 +12,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-
-import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -53,6 +50,8 @@ public class HomePage extends Activity implements OnClickListener {
 
         PreferenceManager.setDefaultValues(this, R.xml.mypreference, false);
         checkForAPKUpdates();
+
+        //MobileAds.initialize(this, getResources().getString(R.string.unit_id));
     }
 
 
@@ -126,11 +125,15 @@ public class HomePage extends Activity implements OnClickListener {
             try {
                 //It retrieves the latest version by scraping the content of current version from play store at runtime
                 String urlOfAppFromPlayStore = "https://play.google.com/store/apps/details?id=suresh.expensesimpletracking&hl=en";
-                Document doc = Jsoup.connect(urlOfAppFromPlayStore).get();
-                if (doc != null) {
-                    latestVersion = doc.getElementsByAttributeValue
-                            ("itemprop", "softwareVersion").first().text();
-                }
+                latestVersion = Jsoup.connect(urlOfAppFromPlayStore)
+                        .timeout(30000)
+                        .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+                        .referrer("http://www.google.com")
+                        .get()
+                        .select("div.hAyfc:nth-child(3) > span:nth-child(2) > div:nth-child(1) > span:nth-child(1)")
+                        .first()
+                        .ownText();
+                Log.e("latestversion","---"+latestVersion);
             } catch (Exception e) {
                 e.printStackTrace();
                 Toast.makeText(HomePage.this, e.getMessage(), Toast.LENGTH_LONG).show();
